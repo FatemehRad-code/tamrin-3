@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تغییر رنگ دیوها</title>
+    <style>
+        /* .div-container{ */
+            /* display: flex; */
+            /* justify-content: space-around; */
+            /* width: 400px; */
+        /* } */
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;;
+            /* border: 1px solid black; */
+            margin: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="box">click me</div>
+    <div class="box">click me</div>
+    <div class="box">click me</div>
+   
+    <script>
+        const boxes=document.querySelectorAll('.box');
+        boxes.forEach(box => {
+            box.addEventListener('mouseover',()=>{
+                const r= Math.floor(Math.random()*256);
+                const g= Math.floor(Math.random()*256);
+                const b= Math.floor(Math.random()*256);
+                box.style.backgroundColor=`rgb(${r},${g},${b})`;
+            });
+            box.addEventListener('mouseout',()=>{
+                box.style.backgroundColor='#ccc';
+            });
+        });
+        
+    </script>
+</body>
+</html>
